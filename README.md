@@ -1,7 +1,7 @@
 #  <font color='red'>Installation</font>
 This procedure is based on *nix system
 
-1. Install on of the latest stable version of [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
+1. Install one of the latest stable version of [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
 2. Install [Docker Compose](https://docs.docker.com/compose/install/#install-compose)
 
 3. (Optional) Copy Starter Kit files in existing repository
