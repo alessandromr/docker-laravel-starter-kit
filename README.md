@@ -26,7 +26,7 @@
 4. Start Containers
     - `docker-compose up -d`
 
-5. Install Laravel
+5. Run Composer Install
     - `docker-compose exec app composer install`
     
 . Run NPM Install
