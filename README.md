@@ -36,6 +36,17 @@
 7. Restart docker-compose
     - `docker-compose restart`
 
+## Laravel Setup
+
+1. Create .env from .env.example
+    - `cp ./source/.env.example ./source/.env`
+2. Generate the application key
+    - Write your key inside the .env file on `APP_KEY`
+    - Use artisan to generate the key
+        `docker-compose exec app php artisan key:generate`
+
+
+
 
 -----------
 
