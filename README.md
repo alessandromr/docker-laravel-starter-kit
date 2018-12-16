@@ -1,27 +1,38 @@
+
+#  <font color='red'>Requirements</font>
+1. Stable version of [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
+2. Compatible version of [Docker Compose](https://docs.docker.com/compose/install/#install-compose)
+
+
 #  <font color='red'>Installation</font>
-This procedure is based on *nix system
+##### This procedure is for *nix system
 
-1. Install one of the latest stable version of [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1)
-2. Install [Docker Compose](https://docs.docker.com/compose/install/#install-compose)
+1. Clone Starter Kit or downloads Starter Kit in existing repo
+    #### Download file in existing repo
+    ```bash
+    docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git alpine/git clone https://github.com/alessandromr/docker-laravel-starter-kit/ ./tmp123
+    rm ./tmp123/README.md
+    mv ./tmp123/* ./
+    mv ./tmp123/.* ./
+    rm - R tmp123
+    ```
 
-3. (Optional) Copy Starter Kit files in existing repository
-    - `docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git alpine/git clone https://github.com/alessandromr/docker-laravel-starter-kit/ ./tmp123`
-    - `rm ./tmp123/README.md`
-    - `mv ./tmp123/* ./`
-    - `mv ./tmp123/.* ./`
-    - `rm - R tmp123`
-
-4. Build Images
-    - `docker-compose build`
-5. Download Laravel:
+2. Download Laravel:
     - `docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git alpine/git clone https://github.com/laravel/laravel/ ./source`
-6. Start Containers
+
+3. Build Images
+    - `docker-compose build`
+
+4. Start Containers
     - `docker-compose up -d`
-7. Install Laravel
+
+5. Install Laravel
     - `docker-compose exec app composer install`
-8. Run NPM Install
+    
+. Run NPM Install
     - `docker run -ti --rm  -v $(pwd)/source:/current -w /current node:latest npm install`
-9. Restart docker-compose
+
+7. Restart docker-compose
     - `docker-compose restart`
 
 
