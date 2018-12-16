@@ -19,6 +19,7 @@
 
 2. Download Laravel:
     - `docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git alpine/git clone https://github.com/laravel/laravel/ ./source`
+    - `rm -R ./source/.git`
 
 3. Build Images
     - `docker-compose build`
