@@ -29,7 +29,7 @@
 5. Run Composer Install
     - `docker-compose exec app composer install`
     
-. Run NPM Install
+6. Run NPM Install
     - `docker run -ti --rm  -v $(pwd)/source:/current -w /current node:latest npm install`
 
 7. Restart docker-compose
