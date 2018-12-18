@@ -14,7 +14,7 @@
     rm ./tmp123/README.md
     mv ./tmp123/* ./
     mv ./tmp123/.* ./
-    rm - R tmp123
+    rm -R tmp123
     ```
 
 2. Download Laravel:
