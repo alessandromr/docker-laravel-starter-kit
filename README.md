@@ -31,6 +31,12 @@ rm -R tmp123
         `docker-compose exec app php artisan key:generate`
 
 
+## Lumen
+
+1. Install Lumen on containers:
+    - `./getLumen.sh`
+
+
 ------------
 
 #  <font color='red'>What includes?</font>
