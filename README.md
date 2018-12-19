@@ -37,10 +37,14 @@ rm -R tmp123
 
 1. Laravel (PHP + NGINX)
 2. Mysql
-3. Redis (Optional)
-4. Npm (Node)
+3. Npm (Node)
     This container will allow you to compile saas and js with Laravel mix
+4. Phpmyadmin
 
+#### Activable containers
+1. Redis
+2. Elasticsearch
+3. MongoDB
 
 
 -----------
