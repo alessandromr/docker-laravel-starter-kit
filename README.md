@@ -5,16 +5,6 @@
 
 ----------
 
-## Use the starter kit in existing repository
-```bash
-docker run -ti --rm -v ${HOME}:/root -v $(pwd):/git alpine/git clone https://github.com/alessandromr/docker-laravel-starter-kit/ ./tmp123
-rm ./tmp123/README.md
-mv ./tmp123/* ./
-mv ./tmp123/.* ./
-rm -R tmp123
-```
-
-
 #  <font color='red'>Installation</font>
 ##### This procedure is for *nix system
 
@@ -26,9 +16,17 @@ rm -R tmp123
     - `./npmSupport.sh`
 
 3. Generate the application key
-    - Write your key inside the .env file on `APP_KEY`
+    - Write your key inside the ./source/.env file on `APP_KEY` var
     - Use artisan to generate the key
         `docker-compose exec app php artisan key:generate`
+
+Now you can start coding.
+
+
+## Lumen
+
+1. Install Lumen on containers:
+    - `./getLumen.sh`
 
 
 ------------
@@ -50,4 +48,21 @@ rm -R tmp123
 -----------
 
 ### Useful Commands
-`docker-compose exec [container] [command]` can be used to run commands inside the selected container
+- Run a command inside a container:
+    - `docker-compose exec [container] [command]`
+
+##### Basic Docker Compose Commands
+- Build all containers
+    - `docker-compose build`
+- Start all containers
+    - `docker-compose up -d`
+- Stop all containers
+    - `docker-compose stop`
+- Restart all containers
+    - `docker-compose restart`
+
+##### PHP Composer commands
+- Run composer update
+    - `docker-compose exec app composer update`
+- Run composer install
+    - `docker-compose exec app composer install`
