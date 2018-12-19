@@ -19,10 +19,10 @@ rm -R tmp123
 ##### This procedure is for *nix system
 
 
-1. Install Laravel:
+1. Install Laravel on containers:
     - `./getLaravel.sh`
 
-1. Install NPM support for laravel:
+1. Install NPM support for Laravel on containers:
     - `./npmSupport.sh`
 
 3. Generate the application key
