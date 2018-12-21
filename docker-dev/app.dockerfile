@@ -21,7 +21,6 @@ RUN buildDeps=" \
     && apt-get purge -y --auto-remove $buildDeps \
     && rm -r /var/lib/apt/lists/*
 
-ADD ./source/ /var/www
 WORKDIR /var/www
 
 # Install Composer.
