@@ -6,6 +6,6 @@ docker-compose build  > /dev/null &&
 echo "3/4-Starting containers" &&
 docker-compose up -d  > /dev/null &&
 echo "4/4-Running composer install" &&
-docker-compose exec app composer install > /dev/null &&
+docker-compose exec php composer install > /dev/null &&
 cp ./source/.env.example ./source/.env  > /dev/null &&
 echo "Sucessfully Installed Laravel on containers" 
