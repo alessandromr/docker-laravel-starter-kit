@@ -33,16 +33,16 @@ Now you can start coding.
 
 #  <font color='red'>What includes?</font>
 
-1. Laravel (PHP + NGINX)
-2. Mysql
-3. Npm (Node)
+1. Laravel (PHP-FPM 7.3 + NGINX Stable)
+2. Mysql 5.7
+3. Npm (Node LTS, Stretch Slim)
     This container will allow you to compile saas and js with Laravel mix
-4. Phpmyadmin
+4. Phpmyadmin Stable
 
 #### Activable containers
-1. Redis
-2. Elasticsearch
-3. MongoDB
+1. Redis 5-stable
+2. Elasticsearch 5.x
+3. MongoDB 4-xenial
 
 
 -----------
