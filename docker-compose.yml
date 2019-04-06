@@ -34,17 +34,18 @@ services:
   ####################################################################################################
   mysql:
     image: mysql:5.7
+    restart: always
     ports:
       - '3306:3306'
     expose:
       - 3306
     volumes:
-      - ./image/mysql/data/:/var/lib/mysql
+      - mysqlData:/var/lib/mysql/
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: laravel
       MYSQL_PASSWORD: root
-      MYSQL_DATABASE: root
+      MYSQL_DATABASE: laravel
   ####################################################################################################
   # Node Assets Compiler
   ####################################################################################################
@@ -60,10 +61,10 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     environment:
-      - PMA_ARBITRARY=1
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root
-      - MYSQL_ROOT_PASSWORD=root
+      - PMA_HOSTS=mysql
+      - PMA_PORT=3306
+      - PMA_USER=laravel
+      - PMA_PASSWORD=root
     ports:
       - '8081:80'
     links:
@@ -71,37 +72,41 @@ services:
   ####################################################################################################
   # Redis
   ####################################################################################################
-  redis:
-    image: redis:5-stretch
-    ports:
-        - "6379:6379"
-    expose:
-        - 6379
-    volumes:
-        - ./image/redis/data:/data
+  # redis:
+  #   image: redis:5-stretch
+  #   ports:
+  #       - "6379:6379"
+  #   expose:
+  #       - 6379
+  #   volumes:
+  #       - redisData:/data
   ####################################################################################################
   # Elasticsearch
   ####################################################################################################
-  elasticsearch:
-    image: elasticsearch:5
-    ports:
-      - '9200:9200'
-      - '9300:9300'
-    expose:
-      - 9200
-      - 9300
-    volumes:
-      - ./image/elasticsearch:/usr/share/elasticsearch/data
-    environment:
-      - cluster.name=laravel-cluster
-      - bootstrap.memory_lock=true
-      - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
+  # elasticsearch:
+  #   image: elasticsearch:5
+  #   ports:
+  #     - '9200:9200'
+  #     - '9300:9300'
+  #   expose:
+  #     - 9200
+  #     - 9300
+  #   volumes:
+  #     - elasticsearchData:/usr/share/elasticsearch/data
+  #   environment:
+  #     - cluster.name=laravel-cluster
+  #     - bootstrap.memory_lock=true
+  #     - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
   ####################################################################################################
   # Mongo
   ####################################################################################################
-  mongodb:
-    image: mongo:4-xenial
-    container_name: "mongodb"
-    ports:
-        - 27017:27017
+  # mongodb:
+  #   image: mongo:4-xenial
+  #   container_name: "mongodb"
+  #   ports:
+  #       - 27017:27017
+volumes:
+  mysqlData:
+  redisData:
+  elasticsearchData:
 
